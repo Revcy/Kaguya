@@ -18,7 +18,7 @@ def weather_function(message):
     bot.register_next_step_handler(context_message, weather_report_function)
 
 def weather_report_function(message):
-    language = 'ru'
+    language = 'en'
     city = message.text
 
     report = weather_report(city, language)
