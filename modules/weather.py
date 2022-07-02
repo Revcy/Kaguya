@@ -6,7 +6,7 @@ def weather_report(city, lang):
         'q': city,
         'lang': lang,
         'units': 'metric',
-        'appid': 'cc4c2430094a535621d8173c34bded45',
+        'appid': '',
     }
 
     response = requests.get('https://api.openweathermap.org/data/2.5/weather', params=param)                        #   
