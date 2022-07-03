@@ -9,7 +9,7 @@ def weather_report(city, lang):
         'appid': '',
     }
 
-    response = requests.get('https://api.openweathermap.org/data/2.5/weather', params=param)                        #   
+    response = requests.get('https://api.openweathermap.org/data/2.5/weather', params=param)
     
     if response:
         json = response.json()
@@ -32,9 +32,28 @@ def weather_report(city, lang):
         weather_cloud_status = json['clouds']['all']                                                                #   Процент облачности
         weather_sunrise = dt.datetime.utcfromtimestamp(json['sys']['sunrise'])                                      #   Время рассвета
         weather_sunset = dt.datetime.utcfromtimestamp(json['sys']['sunset'])                                        #   Время заката
-
+        
+        print(json)
         result = f'Weather info for {weather_city}, {weather_country}: \n\nTime: {weather_time} \nDescription: {weather_desc.capitalize()} \nTemperature: {weather_temp}°C (Feels like: {weather_real_temp}°C) \nWing speed: {weather_wind_speed} m/s \nPressure: {weather_pressure} Pa \nHumidity: {weather_humidity}%'
     else:
         result = 'Information not found or site not working'
+
+    return result
+
+def weather_city_id(city, lang):
+    param = {
+        'q': city,
+        'lang': lang,
+        'units': 'metric',
+        'appid': '29492fccd249924c0b69a2621749fd68',
+    }
+
+    response = requests.get('https://api.openweathermap.org/data/2.5/weather', params=param)
+
+    if response:
+        json = response.json()
+        result = json['id']
+    else:
+        result = None
 
     return result
