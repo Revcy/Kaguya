@@ -24,16 +24,18 @@ def weather_report(city, lang):
         weather_temp_max = json['main']['temp_max']                                                                 #   Максимальная температура
         weather_pressure = json['main']['pressure']                                                                 #   Давление
         weather_humidity = json['main']['humidity']                                                                 #   Влажность
-        weather_sea_level = json['main']['sea_level']                                                               #   Уровень моря
-        weather_grnd_level = json['main']['grnd_level']                                                             #   Уровень поверхности
+        # weather_sea_level = json['main']['sea_level']                                                             #   Уровень моря
+        # weather_grnd_level = json['main']['grnd_level']                                                           #   Уровень поверхности
         weather_visibility = json['visibility']                                                                     #   Видимость
         weather_wind_speed = json['wind']['speed']                                                                  #   Скорость ветра
         weather_wind_degreee = json['wind']['deg']                                                                  #   Угол направления ветра
-        weather_wind_gust = json['wind']['gust']                                                                    #   Порывы ветра
+        # weather_wind_gust = json['wind']['gust']                                                                  #   Порывы ветра
         weather_cloud_status = json['clouds']['all']                                                                #   Процент облачности
         weather_sunrise = dt.datetime.utcfromtimestamp(json['sys']['sunrise'])                                      #   Время рассвета
         weather_sunset = dt.datetime.utcfromtimestamp(json['sys']['sunset'])                                        #   Время заката
         
+        print(json)
+
         result = list()
         result.append(weather_city)
         result.append(weather_country)
