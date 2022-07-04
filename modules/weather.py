@@ -1,12 +1,12 @@
 import requests
 import datetime as dt
 
-def weather_report(city, lang):
+def weather_report(city, lang, appid):
     param = {
         'q': city,
         'lang': lang,
         'units': 'metric',
-        'appid': '',
+        'appid': appid,
     }
 
     response = requests.get('https://api.openweathermap.org/data/2.5/weather', params=param)
@@ -33,8 +33,6 @@ def weather_report(city, lang):
         weather_cloud_status = json['clouds']['all']                                                                #   Процент облачности
         weather_sunrise = dt.datetime.utcfromtimestamp(json['sys']['sunrise'])                                      #   Время рассвета
         weather_sunset = dt.datetime.utcfromtimestamp(json['sys']['sunset'])                                        #   Время заката
-        
-        print(json)
 
         result = list()
         result.append(weather_city)
