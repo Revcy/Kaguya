@@ -11,4 +11,4 @@ Telegram bot for weather reports
 
 # About
 Bot sending weather report by OpenWeatherMap API. For bot work, you need have API Key, get after registration on openweathermap.org.
-Add API Key into module `'appid': '{here}'` in `modules\weather.py`s
+Add API Key into 2-nd string in `database\tokens.txt`
