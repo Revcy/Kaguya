@@ -1,3 +1,4 @@
-database/token.txt
 modules/__pycache__/__init__.cpython-310.pyc
 modules/__pycache__/weather.cpython-310.pyc
+database
+database/tokens.txt
